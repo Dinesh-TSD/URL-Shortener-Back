@@ -7,16 +7,16 @@ const bodyParser = require("body-parser");
 const { UrlModel } = require("./models/urlModel");
 const validUrl = require('valid-url');
 const shortid = require('shortid');
-// const cors = require("cors");
+const cors = require("cors");
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.json());
 app.use(cookieParser());
-// app.use(
-//   cors({
-//     origin: "https://dinesh-react-login-front.vercel.app",
-//   })
-// );
+app.use(
+  cors({
+    origin: "https://dinesh-url-shortener-front.vercel.app",
+  })
+);
 
 app.get("/",(req,res)=>{{
   res.send("Hello Word")
